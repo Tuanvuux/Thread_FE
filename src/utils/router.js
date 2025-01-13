@@ -3,5 +3,4 @@ export const ROUTERS = {
     SEARCH: "search",
     ACTIVITY: "activity",
     PROFILE: "profile"
-
 }
