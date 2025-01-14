@@ -13,14 +13,11 @@ const Sidebar = () => {
   const isActive = (path) => location.pathname === path;
   return (
     <div className="flex flex-col w-16 bg-white h-screen p-4 fixed">
-  <div className="mb-8">
-  <Link to="/" className={isActive("/") ? "active" : ""}>
-      <img src={IconLogo} alt="Logo" className="w-12 h-auto mx-auto" />
-  </Link>
-    
-  </div>
-
-  
+      <div className="mb-8">
+        <Link to="/" className={isActive("/") ? "active" : ""}>
+          <img src={IconLogo} alt="Logo" className="w-12 h-auto mx-auto" />
+        </Link>
+      </div>
   <div className="flex flex-col items-center space-y-6 flex-grow justify-center">
   <Link to="/" className={isActive("/") ? "active" : ""}>
       <img src={IconHome} alt="Home Icon" className="w-6 h-6" />
