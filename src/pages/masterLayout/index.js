@@ -1,6 +1,6 @@
 import {memo} from "react"
 import Sidebar from "../../components/Sidebar";
-import Header from "../header";
+import Header from "../../components/Header";
 const MasterLayout = ({ children, ...props }) => {
     return (
         <div className="flex">
