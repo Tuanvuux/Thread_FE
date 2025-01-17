@@ -1,4 +1,5 @@
 import {memo} from "react"
+import PostListPage from "../postPage";
 const HomePage = () => {
     return (
         <div className="w-[640px] h-[5000px] pt-2 mx-auto rounded-t-[24px] bg-white border border-gray-300">
@@ -15,6 +16,7 @@ const HomePage = () => {
                     </div>
                 </div>
             </div>
+            <PostListPage/>
         </div>
     );
 };

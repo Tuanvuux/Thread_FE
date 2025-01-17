@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import API_BASE_URL, { API_ENDPOINTS } from "../../config/api";
 const AddPostPage = () => {
   const [caption, setCaption] = useState("");
   const [images, setImages] = useState([]);
@@ -35,7 +35,7 @@ const AddPostPage = () => {
     });
 
     try {
-      const response = await fetch("http://localhost:8080/thread/api/posts/create", {  // URL đúng của API
+      const response = await fetch(`${API_ENDPOINTS.CREATE_POST}}`, {  // URL đúng của API
         method: "POST",
         body: formData,
       });

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-
+import { API_ENDPOINTS } from "../../config/api";
 const PostListPage = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await fetch("http://localhost:8080/thread/api/posts");
+        const response = await fetch(`${API_ENDPOINTS.GET_LIST_POST}`);
         const data = await response.json();
         setPosts(data);
       } catch (error) {
@@ -18,8 +18,7 @@ const PostListPage = () => {
   }, []);
 
   return (
-    <div className="max-w-md mx-auto p-4 bg-white shadow-md rounded-md">
-      <h2 className="text-lg font-bold mb-4">Post List</h2>
+    <div className="w-[639px] mx-auto p-4 bg-white shadow-md rounded-md">
       {posts.length === 0 ? (
         <p>No posts available</p>
       ) : (
@@ -32,7 +31,7 @@ const PostListPage = () => {
                 <img
                   key={image.imageId}
                   src={`http://localhost:8080/thread/${image.imageUrl}`}
-                  alt={`Post image`}
+                  alt={`Post`}
                   className="w-20 h-20 object-cover rounded-md border border-gray-300"
                 />
               ))}
