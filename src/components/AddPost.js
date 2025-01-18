@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import API_BASE_URL, { API_ENDPOINTS } from "../../config/api";
+import { API_ENDPOINTS } from "../config/api";
 const AddPostPage = () => {
   const [caption, setCaption] = useState("");
   const [images, setImages] = useState([]);
@@ -12,8 +12,6 @@ const AddPostPage = () => {
   const handleImageChange = (e) => {
     const files = Array.from(e.target.files);
     setImages(files);
-
-    // Tạo URL để xem trước hình ảnh
     const urls = files.map((file) => URL.createObjectURL(file));
     setPreviewUrls(urls);
   };
@@ -31,7 +29,7 @@ const AddPostPage = () => {
     formData.append("userId", 1);  // Thêm userId (thí dụ 1, bạn có thể thay đổi theo yêu cầu)
     
     images.forEach((image) => {
-      formData.append("files", image);  // Đảm bảo tên tham số là "files"
+      formData.append("files", image); 
     });
 
     try {

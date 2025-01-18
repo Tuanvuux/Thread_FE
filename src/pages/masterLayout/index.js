@@ -10,6 +10,7 @@ const MasterLayout = ({ children, ...props }) => {
             <div className="flex-1">
                 <div className="fixed top-0 left-0 w-full z-10">
                     <Header />
+                    
                 </div>
                 <div className="mt-[60px]">
                     <div {...props}>
